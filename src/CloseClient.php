@@ -145,7 +145,7 @@ class CloseClient
      */
     public function post($endpoint, $json)
     {
-        $response = $this->sendRequest('POST', "https://api.close.com/api/v1/$endpoint", $json);
+        $response = $this->sendRequest('POST', "https://api.close.com/api/v1/$endpoint/", $json);
         return $this->handleResponse($response);
     }
 
@@ -158,7 +158,7 @@ class CloseClient
      */
     public function put($endpoint, $json)
     {
-        $response = $this->sendRequest('PUT', "https://api.close.com/api/v1/$endpoint", $json);
+        $response = $this->sendRequest('PUT', "https://api.close.com/api/v1/$endpoint/", $json);
         return $this->handleResponse($response);
     }
 
@@ -171,7 +171,7 @@ class CloseClient
      */
     public function delete($endpoint, $json)
     {
-        $response = $this->sendRequest('DELETE', "https://api.close.com/api/v1/$endpoint", $json);
+        $response = $this->sendRequest('DELETE', "https://api.close.com/api/v1/$endpoint/", $json);
         return $this->handleResponse($response);
     }
 
@@ -184,7 +184,7 @@ class CloseClient
      */
     public function get($endpoint, $queryParams = [])
     {
-        $uri = $this->uriFactory->createUri("https://api.close.com/api/v1/$endpoint");
+        $uri = $this->uriFactory->createUri("https://api.close.com/api/v1/$endpoint/");
         if (!empty($queryParams)) {
             $uri = $uri->withQuery(http_build_query($queryParams));
         }
@@ -269,7 +269,7 @@ class CloseClient
             [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
-                'User-Agent' => 'Intercom-PHP-SDK/' . self::SDK_VERSION,
+                'User-Agent' => 'Close-PHP-SDK/' . self::SDK_VERSION,
             ],
             $this->extraRequestHeaders
         );
@@ -339,14 +339,14 @@ class CloseClient
     private function setRateLimitDetails(ResponseInterface $response)
     {
         $this->rateLimitDetails = [
-            'limit' => $response->hasHeader('X-RateLimit-Limit')
-                ? (int)$response->getHeader('X-RateLimit-Limit')[0]
+            'limit' => $response->hasHeader('x-rate-limit-limit')
+                ? (int)$response->getHeader('x-rate-limit-limit')[0]
                 : null,
-            'remaining' => $response->hasHeader('X-RateLimit-Remaining')
-                ? (int)$response->getHeader('X-RateLimit-Remaining')[0]
+            'remaining' => $response->hasHeader('x-rate-limit-remaining')
+                ? (int)$response->getHeader('x-rate-limit-remaining')[0]
                 : null,
-            'reset_at' => $response->hasHeader('X-RateLimit-Reset')
-                ? (new \DateTimeImmutable())->setTimestamp((int)$response->getHeader('X-RateLimit-Reset')[0])
+            'reset_at' => $response->hasHeader('x-rate-limit-reset')
+                ? (new \DateTimeImmutable())->setTimestamp((int)$response->getHeader('x-rate-limit-reset')[0])
                 : null,
         ];
     }

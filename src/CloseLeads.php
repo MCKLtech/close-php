@@ -57,7 +57,7 @@ class CloseLeads extends CloseResource
      * @return stdClass
      * @throws Exception
      */
-    public function getContact(string $id, array $options = [])
+    public function getLead(string $id, array $options = [])
     {
         $path = $this->leadPath($id);
         return $this->client->get($path, $options);

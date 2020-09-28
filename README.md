@@ -1,6 +1,6 @@
 # close-php
 
-PHP bindings to the Close.cpm API
+PHP bindings to the Close.com API
 
 ## Installation
 
