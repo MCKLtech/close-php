@@ -1,121 +1,64 @@
 <?php
 
-namespace Intercom;
+namespace Close;
 
 use Http\Client\Exception;
 use stdClass;
 
-class IntercomUsers extends IntercomResource
+class CloseUsers extends CloseResource
 {
     /**
-     * Creates a User.
+     * Get yourself (me)
      *
-     * @see    https://developers.intercom.io/reference#create-or-update-user
+     * @see    https://developer.close.com/#users
      * @param  array $options
      * @return stdClass
      * @throws Exception
      */
-    public function create(array $options)
+    public function me(array $options = [])
     {
-        return $this->client->post("users", $options);
+        return $this->client->get("me", $options);
     }
 
     /**
-     * Creates a User.
+     * Lists Users. Defaults to same org. as the authenticated user
      *
-     * @see    https://developers.intercom.io/reference#create-or-update-user
+     * @see    https://developer.close.com/#users-list-all-the-users-who-are-members-of-the-same-organizations-as-you-are
      * @param  array $options
      * @return stdClass
      * @throws Exception
      */
-    public function update(array $options)
+    public function getUsers(array $options = [])
     {
-        return $this->create($options);
+        return $this->client->get('user', $options);
     }
 
     /**
-     * Lists Users.
+     * Gets a single User based on their Close ID.
      *
-     * @see    https://developers.intercom.io/reference#list-users
-     * @param  array $options
-     * @return stdClass
-     * @throws Exception
-     */
-    public function getUsers(array $options)
-    {
-        return $this->client->get('users', $options);
-    }
-
-    /**
-     * Gets a single User based on the Intercom ID.
-     *
-     * @see    https://developers.intercom.com/reference#view-a-user
+     * @see    https://developer.close.com/#users-fetch-a-single-user
      * @param  string $id
      * @param  array  $options
      * @return stdClass
      * @throws Exception
      */
-    public function getUser($id, $options = [])
+    public function getUser(string $id, array $options = [])
     {
         $path = $this->userPath($id);
+
         return $this->client->get($path, $options);
     }
 
     /**
-     * Gets a list of Users through the user scroll API.
+     * Fetch the availability statuses of all users within an organization
      *
-     * @see    https://developers.intercom.com/reference#iterating-over-all-users
-     * @param  array $options
+     * @see    https://developer.close.com/#users-fetch-the-availability-statuses-of-all-users-within-an-organization
+     * @param array $options
      * @return stdClass
-     * @throws Exception
      */
-    public function scrollUsers(array $options = [])
+    public function availability(array $options = [])
     {
-        return $this->client->get('users/scroll', $options);
-    }
-
-    /**
-     * Deletes a single User based on the Intercom ID.
-     *
-     * @see    https://developers.intercom.com/reference#archive-a-user
-     * @param  string $id
-     * @param  array  $options
-     * @return stdClass
-     * @throws Exception
-     */
-    public function archiveUser(string $id, array $options = [])
-    {
-        $path = $this->userPath($id);
-        return $this->client->delete($path, $options);
-    }
-
-    /**
-     * Deletes a single User based on the Intercom ID.
-     *
-     * @see    https://developers.intercom.com/reference#archive-a-user
-     * @param  string $id
-     * @param  array  $options
-     * @return stdClass
-     * @throws Exception
-     */
-    public function deleteUser(string $id, array $options = [])
-    {
-        return $this->archiveUser($id, $options);
-    }
-
-    /**
-     * Permanently deletes a single User based on the Intercom ID.
-     *
-     * @see   https://developers.intercom.com/reference#delete-users
-     * @param string $id
-     * @return stdClass
-     * @throws Exception
-     */
-    public function permanentlyDeleteUser(string $id)
-    {
-        return $this->client->post('user_delete_requests', [
-            'intercom_user_id' => $id
-        ]);
+        return $this->client->get('user/availability', $options);
     }
 
     /**
@@ -124,6 +67,6 @@ class IntercomUsers extends IntercomResource
      */
     public function userPath(string $id)
     {
-        return 'users/' . $id;
+        return 'user/' . $id;
     }
 }

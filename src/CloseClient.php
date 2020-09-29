@@ -49,6 +49,11 @@ class CloseClient
     private $extraRequestHeaders;
 
     /**
+     * @var CloseUsers $users
+     */
+    public $users;
+
+    /**
      * @var CloseContacts $contacts
      */
     public $contacts;
@@ -91,6 +96,7 @@ class CloseClient
      */
     public function __construct(string $appIdOrToken, array $extraRequestHeaders = [])
     {
+        $this->users = new CloseUsers($this);
         $this->leads = new CloseLeads($this);
         $this->contacts = new CloseContacts($this);
         $this->opportunities = new CloseOpportunities($this);
