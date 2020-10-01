@@ -3,16 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6de89658-a528-4446-8768-1075437194bc" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../actionbooker/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CloseCustomActivities.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../highways-sync/.idea/highways-sync.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../highways-sync/app/Http/Apps/Close.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../highways-sync/database/seeds/Integrations/Close.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../highways-sync/public/images/brands/close.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../thinkific-video/app/Http/Middleware/SSLRedirect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CloseClient.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloseClient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CloseUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CloseUsers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drone-mapper/.idea/drone-mapper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../drone-mapper/.idea/drone-mapper.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drone-mapper/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drone-mapper/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drone-mapper/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drone-mapper/.idea/vcs.xml" afterDir="false" />
@@ -181,7 +179,10 @@
       <option name="presentableId" value="Default" />
       <updated>1601301362640</updated>
       <workItem from="1601301363696" duration="6973000" />
-      <workItem from="1601397991281" duration="323000" />
+      <workItem from="1601397991281" duration="1011000" />
+      <workItem from="1601469490569" duration="1163000" />
+      <workItem from="1601491971558" duration="9000" />
+      <workItem from="1601573581573" duration="390000" />
     </task>
     <servers />
   </component>

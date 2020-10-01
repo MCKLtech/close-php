@@ -74,6 +74,11 @@ class CloseClient
     public $activities;
 
     /**
+     * @var CloseCustomActivities $customActivities
+     */
+    public $customActivities;
+
+    /**
      * @var ClosePipelines $pipelines
      */
     public $pipelines;
@@ -101,6 +106,7 @@ class CloseClient
         $this->contacts = new CloseContacts($this);
         $this->opportunities = new CloseOpportunities($this);
         $this->activities = new CloseActivities($this);
+        $this->customActivities = new CloseCustomActivities($this);
         $this->pipelines = new ClosePipelines($this);
         $this->tasks = new CloseTasks($this);
 
