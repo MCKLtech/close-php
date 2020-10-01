@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6de89658-a528-4446-8768-1075437194bc" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../actionbooker/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CloseCustomActivities.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CloseCustomFields.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../highways-sync/.idea/highways-sync.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../highways-sync/app/Http/Apps/Close.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../highways-sync/database/seeds/Integrations/Close.php" afterDir="false" />
@@ -182,7 +182,7 @@
       <workItem from="1601397991281" duration="1011000" />
       <workItem from="1601469490569" duration="1163000" />
       <workItem from="1601491971558" duration="9000" />
-      <workItem from="1601573581573" duration="390000" />
+      <workItem from="1601573581573" duration="1300000" />
     </task>
     <servers />
   </component>
